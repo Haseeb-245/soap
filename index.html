@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SOAP API Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="app-header">
+    <div class="header-title">SOAP API Dashboard</div>
+    <div class="header-subtitle">Masculine Dark Theme · Multi-API Client</div>
+  </header>
+
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <nav class="tabs">
+        <button data-tab="calculator" class="tab active">Calculator</button>
+        <button data-tab="temp" class="tab">Temperature</button>
+        <button data-tab="country" class="tab">Country Info</button>
+        <button data-tab="number" class="tab">Number → Words</button>
+      </nav>
+      <div class="note">
+        <strong>Enable Proxy:</strong><br>
+        <a href="https://cors-anywhere.herokuapp.com/corsdemo" target="_blank">Request temporary access</a>
+      </div>
+    </aside>
+
+    <!-- Main Panel -->
+    <main class="panel">
+      <!-- Calculator -->
+      <section id="calculator" class="section visible animate">
+        <h2>Calculator</h2>
+        <p>Add two numbers using the SOAP Calculator API.</p>
+        <div class="grid">
+          <div class="field">
+            <label>Number A</label>
+            <input id="calc-a" type="number" value="12">
+          </div>
+          <div class="field">
+            <label>Number B</label>
+            <input id="calc-b" type="number" value="8">
+          </div>
+        </div>
+        <button id="calc-btn" class="action">Add</button>
+        <div id="calc-result" class="result"></div>
+      </section>
+
+      <!-- Temperature -->
+      <section id="temp" class="section">
+        <h2>Temperature Conversion</h2>
+        <p>Convert Celsius ↔ Fahrenheit instantly.</p>
+        <div class="grid">
+          <div class="field">
+            <label>Value</label>
+            <input id="temp-val" type="text" value="100">
+          </div>
+          <div class="field">
+            <label>Direction</label>
+            <select id="temp-dir">
+              <option value="CtoF">Celsius → Fahrenheit</option>
+              <option value="FtoC">Fahrenheit → Celsius</option>
+            </select>
+          </div>
+        </div>
+        <button id="temp-btn" class="action">Convert</button>
+        <div id="temp-result" class="result"></div>
+      </section>
+
+      <!-- Country Info -->
+      <section id="country" class="section">
+        <h2>Country Info</h2>
+        <p>Get the capital city for any ISO country code.</p>
+        <div class="grid">
+          <div class="field">
+            <label>Country Code</label>
+            <input id="country-code" type="text" value="US" maxlength="3">
+          </div>
+        </div>
+        <button id="country-btn" class="action">Get Capital</button>
+        <div id="country-result" class="result"></div>
+      </section>
+
+      <!-- Number to Words -->
+      <section id="number" class="section">
+        <h2>Number → Words</h2>
+        <p>Convert a number into its English words.</p>
+        <div class="grid">
+          <div class="field">
+            <label>Number</label>
+            <input id="num-val" type="number" value="12345">
+          </div>
+        </div>
+        <button id="num-btn" class="action">Convert</button>
+        <div id="num-result" class="result"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
